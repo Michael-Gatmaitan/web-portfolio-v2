@@ -1,7 +1,8 @@
 import { createContext } from "react";
 
-export const AppContext = createContext({
-  isSidebarOpened: false,
-});
+export interface AppContextI {
+  isSidebarOpen: boolean;
+  setIsSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-// export AppContext;
+export const AppContext = createContext<AppContextI | undefined>(undefined);
